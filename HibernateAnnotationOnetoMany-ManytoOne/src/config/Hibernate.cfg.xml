@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Hibernate DB Dialect -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<!-- Veritabanı Driver -->	
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<!-- DB Host Url -->
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/mydatabase?useSSL=false&amp;serverTimezone=UTC</property>
+		<!-- DB Username -->
+		<property name="hibernate.connection.username">root</property>
+		<!-- DB Password -->
+		<property name="hibernate.connection.password">123</property>
+		<!-- Bağlantı Havuzu -->
+<!-- 		<property name="hibernate.connection.pool_size">1</property> -->
+		<!-- Hibernate her sessionda Thread Kullanır -->
+<!-- 		<property name="hibernate.current_session_context_class">thread</property> -->
+		<!-- HQL Sorgusunu gösterir  -->
+		<property name="hibernate.show_sql">true</property>
+		<!-- SQL Formatı şeklinde HQL Sorugularını Konsolda Gösterir  -->
+		<property name="hibernate.format_sql">true</property>
+		<!-- create, update, validate -->
+		<property name="hibernate.hbm2ddl.auto">create</property>
+		
+		<mapping class="entity.Kisi"/>
+		<mapping class="entity.Telefon"/>
+		
+		
+	</session-factory>
+</hibernate-configuration>
